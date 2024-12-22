@@ -1,0 +1,23 @@
+.cardList {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border: 1px solid blue;
+}
+
+.etiqueta {
+    background-color: #6bd1ff;
+    font-size: 30px;
+    padding-block: 10px;
+    text-align: center;
+    border-radius: 20px 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+    width: 332px;
+}
+
+.list {
+    border: 1px solid red;
+    display: flex;
+}
