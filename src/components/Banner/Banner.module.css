@@ -1,0 +1,51 @@
+.banner {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 50px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 18, 51, 0.500);
+    padding-bottom: 100px;
+    padding-inline: 40px;
+}
+
+.wrapperText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid red;
+    color: white;
+    width: 50%;
+    
+    & label {
+        background-color: #6bd1ff;
+        font-size: 40px;
+        padding: 10px;
+        border-radius: 20px 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        width: fit-content;
+        margin-bottom: 30px;
+    }
+
+    & h2 {
+        font-size: 36px;
+    }
+
+    & p {
+        font-weight: 300;
+    }
+}
+
+.player {
+    width: 50%;
+    height: 300px;
+    border: 1px solid red;
+}

@@ -1,0 +1,5 @@
+.main {
+    border: 1px solid red;
+    padding-inline: 42px;
+    padding-block: 42px 100px;
+}
