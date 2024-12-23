@@ -8,23 +8,4 @@
 .botoes {
     display: flex;
     gap: 25px;
-
-    & button {
-        width: 100px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 700;
-        border-radius: 10px;
-        border: 2px solid white;
-        color: white;
-        background: none;
-        text-transform: uppercase;
-    }
-
-    & button.ativo {
-        background-color: black;
-        color: var(--cor-terciaria);
-        border: 2px solid var(--cor-terciaria);
-        box-shadow: 0 0 6px 2px var(--cor-terciaria) inset;
-    }
 }

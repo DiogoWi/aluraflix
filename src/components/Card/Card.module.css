@@ -2,8 +2,7 @@
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
-    width: 400px;
-    border: 1px solid red;
+    width: 406px;
 
     & img {
         width: 100%;

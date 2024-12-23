@@ -1,0 +1,20 @@
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.ativo {
+    background-color: black;
+    color: var(--cor-terciaria);
+    border: 2px solid var(--cor-terciaria);
+    box-shadow: 0 0 6px 2px var(--cor-terciaria) inset;
+}

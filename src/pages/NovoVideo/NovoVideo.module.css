@@ -1,0 +1,77 @@
+.container {
+    padding: 72px 134px;
+    color: white;
+
+    & h1 {
+        font-size: 60px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    & h2 {
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    & h3 {
+        font-size: 36px;
+        border-block: 3px solid #262626;
+        padding-block: 20px;
+    }
+}
+
+.formulario {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dado {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: calc(50% - 10px);
+
+    & label {
+        font-size: 20px;
+    }
+
+    & :where(input, select, textarea) {
+        padding: 16px 10px;
+        background: none;
+        border: 3px solid #262626;
+        border-radius: 10px;
+        color: #a5a5a5;
+        font-size: 20px;
+    }
+
+    & textarea {
+        height: 220px;
+        resize: none;
+    }
+}
+
+.botoes {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+
+    & button {
+        width: 160px;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        padding-block: 14px;
+        text-transform: uppercase;
+        border-radius: 10px;
+        border: 2px solid white;
+        background: none;
+        cursor: pointer;
+    }
+
+    & button.guardar {
+        border: 3px solid #2271d1;
+    }
+}
