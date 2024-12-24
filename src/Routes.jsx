@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PaginaBase from "@/pages/PaginaBase";
 import Home from "@/pages/Home";
 import NovoVideo from "@/pages/NovoVideo";
-import PaginaBase from "./pages/PaginaBase";
 
 function AppRouter() {
   return (

@@ -1,4 +1,7 @@
 .main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
     border: 1px solid red;
     padding-inline: 42px;
     padding-block: 42px 100px;

@@ -1,10 +1,10 @@
 import Card from '@/components/Card';
 import styles from './CardList.module.css';
 
-function CardList() {
+function CardList({ categoria }) {
     return (
         <div className={styles.cardList}>
-            <label className={styles.etiqueta}>Front End</label>
+            <label className={styles.etiqueta} style={{ backgroundColor: categoria.cor }}>{categoria.texto}</label>
 
             <div className={styles.list}>
                 <Card />

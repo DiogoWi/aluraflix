@@ -1,0 +1,88 @@
+.overlay {
+    background-color: rgba(3, 18, 47, 0.7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.modal {
+    position: absolute;
+    display: block;
+    background-color: #03122f;
+    top: 50px;
+    left: 50%;
+    width: 550px;
+    transform: translateX(-50%);
+    border: 3px solid #6BD1FF;
+    border-radius: 15px;
+    padding: 42px 60px;
+
+    & h2 {
+        font-size: 40px;
+        color: #2271D1;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+    }
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dado {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+
+    & label {
+        font-size: 20px;
+    }
+
+    & :where(input, select, textarea) {
+        padding: 12px 10px;
+        background: none;
+        border: 3px solid #2271D1;
+        border-radius: 10px;
+        color: #a5a5a5;
+        font-size: 20px;
+    }
+
+    & textarea {
+        width: 100%;
+        height: 200px;
+        resize: none;
+    }
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    & button {
+        width: 140px;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        padding-block: 10px;
+        text-transform: uppercase;
+        border-radius: 10px;
+        border: 2px solid white;
+        background: none;
+        cursor: pointer;
+    }
+
+    & button.guardar {
+        background-color: black;
+        color: var(--cor-terciaria);
+        border: 2px solid var(--cor-terciaria);
+        box-shadow: 0 0 6px 2px var(--cor-terciaria) inset;
+    }
+}
