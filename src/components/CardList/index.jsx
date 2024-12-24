@@ -1,15 +1,13 @@
 import Card from '@/components/Card';
 import styles from './CardList.module.css';
 
-function CardList({ categoria }) {
+function CardList({ categoria, videos }) {
     return (
-        <div className={styles.cardList}>
+        videos.length > 0 && <div className={styles.cardList}>
             <label className={styles.etiqueta} style={{ backgroundColor: categoria.cor }}>{categoria.texto}</label>
 
             <div className={styles.list}>
-                <Card />
-                <Card />
-                <Card />
+                {videos.map(video => <Card key={video.id} imagem={video.imagem} />)}
             </div>
         </div>
     )

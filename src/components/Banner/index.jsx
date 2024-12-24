@@ -1,17 +1,25 @@
+import { useVideos } from '@/context/VideosContext';
 import styles from './Banner.module.css';
-import banner from '/banner.png';
+import categorias from '@/mocks/categorias'
 
 function Banner() {
+    const numeroAleatorio = Math.floor(Math.random() * 3);
+    const { videos } = useVideos();
+    const video = videos[numeroAleatorio];
+    const categoria = categorias.filter(categoria => categoria.id === video.categoria)[0];
+
     return (
-        <div className={styles.banner} style={{ backgroundImage: `url(${banner})` }}>
+        <div className={styles.banner} style={{ backgroundImage: `url(${video.imagem})` }}>
             <div className={styles.background}>
                 <div className={styles.wrapperText}>
-                    <label>Front End</label>
-                    <h2>SEO com React</h2>
-                    <p>Eu to aqui pra nesse vídeo dizer que a gente vai aprender a começar uma app inspirada no desenho Pokémon com Nextjs e React, ver algumas dicas sobre performance e de quebra conhecer uma plataforma sensacional pra fazer deploy que é a Vercel. Tudo em 22 minutos nesse vídeo feito com todo o carinho do mundo construindo uma "Pokedex"!</p>
+                    <label>{categoria.texto}</label>
+                    <h2>{video.titulo}</h2>
+                    <p>{video.descricao}</p>
                 </div>
 
-                <div className={styles.player}></div>
+                <div className={styles.player}>
+                    <iframe src={video.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     )

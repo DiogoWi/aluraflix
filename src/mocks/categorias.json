@@ -1,13 +1,16 @@
 [
     {
+        "id": 1,
         "texto": "front end",
         "cor": "#6bd1ff"
     },
     {
+        "id": 2,
         "texto": "back end",
         "cor": "#00C86F"
     },
     {
+        "id": 3,
         "texto": "mobile",
         "cor": "#FFBA05"
     }
