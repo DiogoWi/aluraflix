@@ -21,8 +21,8 @@ function NovoVideo() {
                 </div>
 
                 <div className={styles.dado}>
-                    <label htmlFor="imagem">Imagem</label>
-                    <input type="url" placeholder='Link da imagem' id='imagem' />
+                    <label htmlFor="imagem" className={styles.imagem}>Imagem</label>
+                    <input type="url" placeholder='Link da imagem' id='imagem' className={styles.imagemInput} />
                 </div>
 
                 <div className={styles.dado}>

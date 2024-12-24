@@ -53,6 +53,15 @@
     }
 }
 
+.imagem {
+    color: #E53935;
+}
+
+.imagemInput {
+    color: #E53935;
+    border: 3px solid #E53935;
+}
+
 .botoes {
     display: flex;
     gap: 25px;
