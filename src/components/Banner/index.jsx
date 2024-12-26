@@ -3,8 +3,8 @@ import styles from './Banner.module.css';
 import categorias from '@/mocks/categorias'
 
 function Banner() {
-    const numeroAleatorio = Math.floor(Math.random() * 3);
     const { videos } = useVideos();
+    const numeroAleatorio = Math.floor(Math.random() * videos.length);
     const video = videos[numeroAleatorio];
     const categoria = categorias.filter(categoria => categoria.id === video.categoria)[0];
 
@@ -12,7 +12,7 @@ function Banner() {
         <div className={styles.banner} style={{ backgroundImage: `url(${video.imagem})` }}>
             <div className={styles.background}>
                 <div className={styles.wrapperText}>
-                    <label>{categoria.texto}</label>
+                    <label style={{ backgroundColor: categoria.cor }} >{categoria.texto}</label>
                     <h2>{video.titulo}</h2>
                     <p>{video.descricao}</p>
                 </div>
