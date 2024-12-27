@@ -15,10 +15,9 @@ export default function CategoriaProvider({ children }) {
 }
 
 export function useCategoria() {
-    const {categorias, setCategorias} = useContext(CategoriaContext);
+    const { categorias } = useContext(CategoriaContext);
 
     return {
-        categorias,
-        setCategorias
+        categorias
     }
 }

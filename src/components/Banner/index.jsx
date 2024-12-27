@@ -13,7 +13,7 @@ function Banner() {
         <div className={styles.banner} style={{ backgroundImage: `url(${video.imagem})` }}>
             <div className={styles.background}>
                 <div className={styles.wrapperText}>
-                    <label style={{ backgroundColor: categoria.cor }} >{categoria.texto}</label>
+                    <label style={{ backgroundColor: categoria.cor }}>{categoria.texto}</label>
                     <h2>{video.titulo}</h2>
                     <p>{video.descricao}</p>
                 </div>

@@ -17,8 +17,12 @@ export default function VideosProvider({ children }) {
 export function useVideos() {
     const {videos, setVideos} = useContext(VideosContext);
 
+    function registrarVideo(video) {
+        setVideos([...videos, video]);
+    }
+
     return {
         videos,
-        setVideos
+        registrarVideo
     }
 }
