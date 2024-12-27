@@ -1,6 +1,9 @@
+import { useCategoria } from '@/context/CategoriaContext';
 import styles from './NovoVideo.module.css';
 
 function NovoVideo() {
+    const { categorias } = useCategoria();
+
     return (
         <main className={styles.container}>
             <h1>Novo Vídeo</h1>
@@ -16,7 +19,8 @@ function NovoVideo() {
                 <div className={styles.dado}>
                     <label htmlFor="categoria">Categoria</label>
                     <select name="categoria" id="categoria">
-                        <option value="1">teste</option>
+                        <option disabled>Escolha uma opção</option>
+                        {categorias.map(categoria => <option value={categoria.id}>{categoria.texto}</option>)}
                     </select>
                 </div>
 

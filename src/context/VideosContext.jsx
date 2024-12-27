@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import MockVideos from '@/mocks/videos'
+import MockVideos from '@/mocks/videos';
 
 const VideosContext = createContext();
 VideosContext.displayName = "Videos";
@@ -15,7 +15,7 @@ export default function VideosProvider({ children }) {
 }
 
 export function useVideos() {
-    const {videos, setVideos} = useContext(VideosContext)
+    const {videos, setVideos} = useContext(VideosContext);
 
     return {
         videos,

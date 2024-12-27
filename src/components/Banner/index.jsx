@@ -1,8 +1,9 @@
 import { useVideos } from '@/context/VideosContext';
 import styles from './Banner.module.css';
-import categorias from '@/mocks/categorias'
+import { useCategoria } from '@/context/CategoriaContext';
 
 function Banner() {
+    const { categorias } = useCategoria();
     const { videos } = useVideos();
     const numeroAleatorio = Math.floor(Math.random() * videos.length);
     const video = videos[numeroAleatorio];

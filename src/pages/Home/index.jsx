@@ -1,11 +1,12 @@
 import styles from './Home.module.css';
-import categorias from '@/mocks/categorias'
 import Banner from '@/components/Banner';
 import CardList from '@/components/CardList';
 import Modal from '@/components/Modal';
 import { useVideos } from '@/context/VideosContext';
+import { useCategoria } from '@/context/CategoriaContext';
 
 function Home() {
+  const { categorias } = useCategoria();
   const { videos } = useVideos();
 
   return (
