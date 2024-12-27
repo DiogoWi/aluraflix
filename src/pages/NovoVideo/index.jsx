@@ -22,12 +22,12 @@ function NovoVideo() {
             <form className={styles.formulario}>
                 <div className={styles.dado}>
                     <label htmlFor="titulo">Título</label>
-                    <input type="text" placeholder='Digite o título' id='titulo' onInput={input => setTitulo(input.target.value)} />
+                    <input type="text" placeholder='Digite o título' id='titulo' value={titulo} onInput={input => setTitulo(input.target.value)} />
                 </div>
 
                 <div className={styles.dado}>
                     <label htmlFor="categoria">Categoria</label>
-                    <select name="categoria" id="categoria" onChange={select => {
+                    <select value={categoria} name="categoria" id="categoria" onChange={select => {
                         setCategoria(Number(select.target.options[select.target.selectedIndex].value));
                     }}>
                         <option disabled>Escolha uma opção</option>
@@ -37,31 +37,46 @@ function NovoVideo() {
 
                 <div className={styles.dado}>
                     <label htmlFor="imagem" className={styles.imagem}>Imagem</label>
-                    <input required type="url" placeholder='Link da imagem' id='imagem' className={styles.imagemInput} 
+                    <input required type="url" placeholder='Link da imagem' id='imagem' value={imagem} className={styles.imagemInput} 
                     onInput={input => setImagem(input.target.value)} />
                 </div>
 
                 <div className={styles.dado}>
                     <label htmlFor="video">Vídeo</label>
-                    <input type="url" placeholder='Link do vídeo' id='video' onInput={input => setVideo(input.target.value)} />
+                    <input type="url" placeholder='Link do vídeo' id='video' value={video} onInput={input => setVideo(input.target.value)} />
                 </div>
 
                 <div className={styles.dado}>
                     <label htmlFor="descricao">Descrição</label>
-                    <textarea name="descricao" placeholder='Sobre o que é esse vídeo' id="descricao" 
+                    <textarea name="descricao" placeholder='Sobre o que é esse vídeo' id="descricao" value={descricao} 
                     onInput={input => setDescricao(input.target.value)}></textarea>
                 </div>
 
                 <div className={styles.botoes}>
-                    <button type='button' className={styles.guardar} onClick={() => registrarVideo({
-                        id: (videos.length + 1),
-                        titulo,
-                        categoria,
-                        imagem,
-                        video,
-                        descricao
-                    })}>Guardar</button>
-                    <button>Limpar</button>
+                    <button type='button' className={styles.guardar} onClick={() => {
+                        registrarVideo({
+                            id: (videos.length + 1),
+                            titulo,
+                            categoria,
+                            imagem,
+                            video,
+                            descricao
+                        });
+
+                        setTitulo('');
+                        setCategoria(1);
+                        setImagem('');
+                        setVideo('');
+                        setDescricao('');
+                    }}>Guardar</button>
+
+                    <button type='button' onClick={() => {
+                        setTitulo('');
+                        setCategoria(1);
+                        setImagem('');
+                        setVideo('');
+                        setDescricao('');
+                    }}>Limpar</button>
                 </div>
             </form>
         </main>
