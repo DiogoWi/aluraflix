@@ -5,13 +5,21 @@ import { useState } from 'react';
 
 function NovoVideo() {
     const { categorias } = useCategoria();
-    const { videos, registrarVideo } = useVideos();
-
-    const [titulo, setTitulo] = useState('');
-    const [categoria, setCategoria] = useState(1);
-    const [imagem, setImagem] = useState('');
-    const [video, setVideo] = useState('');
-    const [descricao, setDescricao] = useState('');
+    const { 
+        videos, 
+        titulo,
+        setTitulo,
+        categoria,
+        setCategoria,
+        imagem,
+        setImagem,
+        video,
+        setVideo,
+        descricao,
+        setDescricao,
+        registrarVideo,
+        limparDados
+    } = useVideos();
 
     return (
         <main className={styles.container}>
@@ -63,20 +71,10 @@ function NovoVideo() {
                             descricao
                         });
 
-                        setTitulo('');
-                        setCategoria(1);
-                        setImagem('');
-                        setVideo('');
-                        setDescricao('');
+                        limparDados();
                     }}>Guardar</button>
 
-                    <button type='button' onClick={() => {
-                        setTitulo('');
-                        setCategoria(1);
-                        setImagem('');
-                        setVideo('');
-                        setDescricao('');
-                    }}>Limpar</button>
+                    <button type='button' onClick={() => limparDados()}>Limpar</button>
                 </div>
             </form>
         </main>

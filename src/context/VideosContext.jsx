@@ -17,12 +17,52 @@ export default function VideosProvider({ children }) {
 export function useVideos() {
     const {videos, setVideos} = useContext(VideosContext);
 
+    const [titulo, setTitulo] = useState('');
+    const [categoria, setCategoria] = useState(1);
+    const [imagem, setImagem] = useState('');
+    const [video, setVideo] = useState('');
+    const [descricao, setDescricao] = useState('');
+
     function registrarVideo(video) {
         setVideos([...videos, video]);
     }
 
+    function guardarVideo(videoModal) {
+        setVideos(videos.map(video => {
+            if (video.id === videoModal.id) {
+                video.titulo = videoModal.titulo;
+                video.categoria = videoModal.categoria;
+                video.imagem = videoModal.imagem;
+                video.video = videoModal.video;
+                video.descricao = videoModal.descricao;
+            }
+
+            return video;
+        }));
+    }
+
+    function limparDados() {
+        setTitulo('');
+        setCategoria(1);
+        setImagem('');
+        setVideo('');
+        setDescricao('');
+    }
+
     return {
         videos,
-        registrarVideo
+        titulo,
+        setTitulo,
+        categoria,
+        setCategoria,
+        imagem,
+        setImagem,
+        video,
+        setVideo,
+        descricao,
+        setDescricao,
+        registrarVideo,
+        guardarVideo,
+        limparDados
     }
 }
