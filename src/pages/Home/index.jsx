@@ -18,7 +18,7 @@ function Home() {
           categoria={categoria} 
           videos={videos.filter(video => video.categoria === categoria.id)} />)}
       </main>
-      {/* <Modal /> */}
+      <Modal />
     </>
   )
 }

@@ -1,10 +1,15 @@
+import { useModal } from '@/context/ModalContext';
 import styles from './Modal.module.css';
+import fechar from './fechar.png';
 
 function Modal() {
+    const { videoModal } = useModal();
+
     return (
-        <div className={styles.overlay}>
-            <dialog open={true} className={styles.modal}>
+        videoModal && <div className={styles.overlay}>
+            <dialog open className={styles.modal}>
                 <h2>Editar Card</h2>
+                <button><img src={fechar} alt="" /></button>
                 <form method="dialog" className={styles.formulario}>
                     <div className={styles.dado}>
                         <label htmlFor="titulo">Título</label>

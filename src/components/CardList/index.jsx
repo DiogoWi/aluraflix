@@ -7,7 +7,7 @@ function CardList({ categoria, videos }) {
             <label className={styles.etiqueta} style={{ backgroundColor: categoria.cor }}>{categoria.texto}</label>
 
             <div className={styles.list}>
-                {videos.map(video => <Card key={video.id} imagem={video.imagem} />)}
+                {videos.map(video => <Card key={video.id} video={video} />)}
             </div>
         </div>
     )

@@ -27,6 +27,21 @@
         text-transform: uppercase;
         margin-bottom: 22px;
     }
+
+    & > button {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+        background: none;
+        border: none;
+
+        & > img {
+            width: 100%;
+        }
+    }
 }
 
 .formulario {
