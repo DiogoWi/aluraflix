@@ -51,7 +51,7 @@ function NovoVideo() {
 
                 <div className={styles.dado}>
                     <label htmlFor="video">Vídeo</label>
-                    <input type="url" placeholder='Link do vídeo' id='video' value={video} onInput={input => setVideo(input.target.value)} />
+                    <input type="url" placeholder='Link da barra de pesquisa do Youtube' id='video' value={video} onInput={input => setVideo(input.target.value)} />
                 </div>
 
                 <div className={styles.dado}>
