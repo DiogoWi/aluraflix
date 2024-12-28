@@ -41,6 +41,10 @@ export function useVideos() {
         }));
     }
 
+    function excluirVideo(videoSelecionado) {
+        setVideos(videos.filter(video => video.id !== videoSelecionado.id));
+    }
+
     function limparDados() {
         setTitulo('');
         setCategoria(1);
@@ -63,6 +67,7 @@ export function useVideos() {
         setDescricao,
         registrarVideo,
         guardarVideo,
+        excluirVideo,
         limparDados
     }
 }
