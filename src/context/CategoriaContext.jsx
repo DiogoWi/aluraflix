@@ -1,11 +1,17 @@
-import { createContext, useContext, useState } from "react";
-import MockCategorias from '@/mocks/categorias';
+import { createContext, useContext, useEffect, useState } from "react";
 
 const CategoriaContext = createContext();
 CategoriaContext.displayName = "Categoria";
 
 export default function CategoriaProvider({ children }) {
-    const [categorias, setCategorias] = useState(MockCategorias);
+    const [categorias, setCategorias] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/categorias')
+            .then(response => response.json())
+            .then(data => setCategorias(data))
+            .catch(erro => console.log(erro))
+    }, []);
 
     return (
         <CategoriaContext.Provider value={{ categorias, setCategorias }}>

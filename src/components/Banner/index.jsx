@@ -1,16 +1,17 @@
-import { useVideos } from '@/context/VideosContext';
 import styles from './Banner.module.css';
 import { useCategoria } from '@/context/CategoriaContext';
+import { useVideos } from '@/context/VideosContext';
 
 function Banner() {
     const { categorias } = useCategoria();
     const { videos } = useVideos();
     const numeroAleatorio = Math.floor(Math.random() * videos.length);
     const video = videos[numeroAleatorio];
-    const categoria = categorias.filter(categoria => categoria.id === video.categoria)[0];
+
+    const categoria = categorias.find(categoria => categoria.id === video.categoria);
 
     return (
-        <div className={styles.banner} style={{ backgroundImage: `url(${video.imagem})` }}>
+        video && categoria && <div className={styles.banner} style={{ backgroundImage: `url(${video.imagem})` }}>
             <div className={styles.background}>
                 <div className={styles.wrapperText}>
                     <label style={{ backgroundColor: categoria.cor }}>{categoria.texto}</label>

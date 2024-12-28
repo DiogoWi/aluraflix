@@ -1,11 +1,17 @@
-import { createContext, useContext, useState } from "react";
-import MockVideos from '@/mocks/videos';
+import { createContext, useContext, useEffect, useState } from "react";
 
 const VideosContext = createContext();
 VideosContext.displayName = "Videos";
 
 export default function VideosProvider({ children }) {
-    const [videos, setVideos] = useState(MockVideos);
+    const [videos, setVideos] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/videos')
+            .then(response => response.json())
+            .then(data => setVideos(data))
+            .catch(erro => console.log(erro))
+    }, []);
 
     return (
         <VideosContext.Provider value={{ videos, setVideos }}>
@@ -15,7 +21,7 @@ export default function VideosProvider({ children }) {
 }
 
 export function useVideos() {
-    const {videos, setVideos} = useContext(VideosContext);
+    const { videos, setVideos } = useContext(VideosContext);
 
     const [titulo, setTitulo] = useState('');
     const [categoria, setCategoria] = useState(1);
