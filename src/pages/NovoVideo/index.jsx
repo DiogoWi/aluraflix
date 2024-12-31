@@ -21,6 +21,34 @@ function NovoVideo() {
         limparDados
     } = useVideos();
 
+    function verificacao() {
+        if (titulo == '') {
+            alert('Não foi dado um título ao vídeo!')
+            return
+        }
+
+        if (imagem == '') {
+            alert('Não foi adicionado um link de imagem!')
+            return
+        }
+
+        if (video == '') {
+            alert('Não foi adicionado um link de vídeo!')
+            return
+        }
+
+        registrarVideo({
+            id: (videos.length + 1),
+            titulo,
+            categoria,
+            imagem,
+            video,
+            descricao
+        });
+
+        limparDados();
+    }
+
     return (
         <main className={styles.container}>
             <h1>Novo Vídeo</h1>
@@ -61,18 +89,7 @@ function NovoVideo() {
                 </div>
 
                 <div className={styles.botoes}>
-                    <button type='button' className={styles.guardar} onClick={() => {
-                        registrarVideo({
-                            id: (videos.length + 1),
-                            titulo,
-                            categoria,
-                            imagem,
-                            video,
-                            descricao
-                        });
-
-                        limparDados();
-                    }}>Guardar</button>
+                    <button type='button' className={styles.guardar} onClick={() => verificacao()}>Guardar</button>
 
                     <button type='button' onClick={() => limparDados()}>Limpar</button>
                 </div>
