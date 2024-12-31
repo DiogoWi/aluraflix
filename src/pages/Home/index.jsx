@@ -16,7 +16,7 @@ function Home() {
         {categorias.map(categoria => <CardList 
           key={categoria.id} 
           categoria={categoria} 
-          videos={videos.filter(video => video.categoria === categoria.id)} />)}
+          videos={videos.filter(video => video.categoria == categoria.id)} />)}
       </main>
       <Modal />
     </>

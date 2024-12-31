@@ -8,7 +8,7 @@ function Banner() {
     const numeroAleatorio = Math.floor(Math.random() * videos.length);
     const video = videos[numeroAleatorio];
 
-    const categoria = categorias.find(categoria => categoria.id === video?.categoria);
+    const categoria = categorias.find(categoria => categoria.id == video?.categoria);
     const videoIframe = video?.video.substring(video?.video.indexOf('v=', 0) + 2);
     // console.log(video?.video.substring(video?.video.indexOf('v=', 0) + 2))
 
