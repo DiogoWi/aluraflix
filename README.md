@@ -35,7 +35,7 @@ AluraFlix é um projeto de gestão de vídeos de aulas, projeto didático do pro
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/aluraflix.git
+   git clone https://github.com/DiogoWi/aluraflix.git
    ```
 2. Acesse a pasta do projeto:
    ```bash
